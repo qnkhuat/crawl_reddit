@@ -145,9 +145,9 @@ class Reddit(scrapy.Spider):
                     with open(save_file,'w') as f:
                         json.dump([thread],f)
                 self.saved_count+=1
-                print(f'{self.saved_count} files saved')
+                self.logger.info(f'{self.saved_count} files saved')
             except Exception as e:
-                print(f'Something bad happened!!! EXCEPTION : {e}')
+                self.logger.error(f'Something bad happened!!! EXCEPTION : {e}')
 
                     
         
